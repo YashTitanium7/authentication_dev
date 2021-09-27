@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins" !important;
+}
+
+html {
+  font-size: 10px !important;
+}
+
+.navbar {
+  position: absolute !important;
+  width: 100vw !important;
+  height: 7rem !important;
+  padding: 0 4rem;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.navbar ul .navbar__button {
+  margin: 0 1rem !important;
+}
+
+.navbar__button button {
+  padding: 0.5rem 2rem !important;
+  font-size: 2rem !important;
+  font-weight: 500 !important;
+  background-color: #8bc6ec !important;
+  background-image: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  cursor: pointer !important;
+}
+
+.navbar-logo {
+  font-size: 3.5rem !important;
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+section {
+  height: 100vh !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+section h1 {
+  font-size: 20rem !important;
+}
+
+#login__page {
+  height: 100vh !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+}
+/* Login SVG */
+#login__page-svg-img { 
+  width: 40vw !important;
+}
+
+.login__page-svg {
+  height: 100vh !important;
+  min-width: 65% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+form {
+  width: 100%;
+}
+
+.login__page-form {
+  display: flex !important;
+  width: 100%;
+  padding: 0 10rem 0 0;
+}
+
+.login__page-form-inp {
+  font-size: 1.5rem;
+  padding: 0.6rem 0.8rem;
+}
+
+.form-label {
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.form-check {
+  font-size: 1.4rem;
+}
+
+.login__page-form-submiBtn {
+  font-size: 1.75rem;
+}
+

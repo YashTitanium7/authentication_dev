@@ -1,0 +1,15 @@
+#login_svg-blob {
+  animation: blobAnim 4s ease-in-out infinite;
+}
+
+@keyframes blobAnim {
+  0% {
+    transform: translateY(25px);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(25px);
+  }
+}
