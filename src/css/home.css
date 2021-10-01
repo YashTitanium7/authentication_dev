@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+#home_blob_1 {
+  position: absolute;
+  z-index: -2;
+}
+
+#home__page {
+  flex-direction: column !important;
+}
+
+.home__page-welcome {
+  font-size: 2rem;
+}
+
+.home__page-userName {
+  font-family: 'JetBrains Mono' !important;
+  font-size: 6rem;
+  font-weight: 600;
+}
