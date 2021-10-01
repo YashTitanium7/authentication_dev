@@ -12,6 +12,10 @@ html {
   font-size: 10px !important;
 }
 
+button {
+  font-family: 'JetBrains Mono' !important;
+}
+
 .navbar {
   position: absolute !important;
   width: 100vw !important;
@@ -133,7 +137,7 @@ form {
 }
 
 .form-inp-a {
-  font-family: 'JetBrains Mono'!important;
+  font-family: 'JetBrains Mono' !important;
 }
 
 .Toastify__toast-body {
