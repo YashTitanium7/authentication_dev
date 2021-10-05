@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const DB = process.env.DATABASE_URI
+const DB = process.env.DATABASE_URI || require('../../config.json').DATABASE_URI
 
 mongoose.connect(DB, {
   useNewUrlParser: true,

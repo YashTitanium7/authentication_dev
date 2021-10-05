@@ -1,0 +1,5 @@
+{
+  "SERVER_PORT": 5000,
+  "DATABASE_URI": "mongodb+srv://yash:yash@auth-clust.xe4sz.mongodb.net/mern-auth-sys?retryWrites=true&w=majority",
+  "JWT_SECRET": "5d2546646e38b467b1a8d6a48a7bc656736390a8bf774f55e44d11600249"
+}

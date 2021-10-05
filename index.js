@@ -1,7 +1,7 @@
-require('dotenv').config()
+const config = require('./config.json')
 const express = require('express'),
   app = express(),
-  PORT = process.env.SERVER_PORT,
+  PORT = process.env.SERVER_PORT || config.SERVER_PORT,
   cors = require('cors')
   
 app.get('/', (req, res) => {
