@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap");
 
 * {
   padding: 0;
@@ -13,7 +13,7 @@ html {
 }
 
 button {
-  font-family: 'JetBrains Mono' !important;
+  font-family: "JetBrains Mono" !important;
 }
 
 .navbar {
@@ -67,7 +67,7 @@ section {
   justify-content: flex-start !important;
 }
 /* Login SVG */
-#login__page-svg-img { 
+#login__page-svg-img {
   width: 40vw !important;
 }
 
@@ -103,7 +103,7 @@ form {
   font-size: 1.4rem;
 }
 
-.login__page-form-submiBtn {
+.form-submitBtn {
   font-size: 1.75rem;
 }
 
@@ -113,7 +113,7 @@ form {
   display: flex !important;
   justify-content: flex-start !important;
 }
-#register__page-svg-img { 
+#register__page-svg-img {
   width: 40vw !important;
 }
 .register__pageregister__page-svg {
@@ -132,14 +132,35 @@ form {
   font-size: 1.5rem;
   padding: 0.6rem 0.8rem;
 }
-.register__page-form-submiBtn {
-  font-size: 1.75rem;
-}
 
 .form-inp-a {
-  font-family: 'JetBrains Mono' !important;
+  font-family: "JetBrains Mono" !important;
 }
 
 .Toastify__toast-body {
   font-size: 2rem;
+}
+
+.login__page-submitBtn__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot__page-emailInput {
+  font-size: 1.5rem;
+  padding: 0.6rem 0.8rem;
+}
+
+.forgot__page-wrapper {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 35%;
+}
+
+.form-link {
+  font-size: 1.5rem;
 }

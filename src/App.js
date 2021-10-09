@@ -3,7 +3,6 @@ import { ForgotPage, ResetPage, Home, Login, Register } from "./pages";
 import { Navbar } from "./components";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import jwt from "jsonwebtoken";
-import { JWT_SECRET } from "./config.json";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -13,6 +12,7 @@ function App() {
   const getDetails = async () => {
     const token = localStorage.getItem("token");
     if (!token) return;
+    const JWT_SECRET = process.env.REACT_APP_JWT_SECRET
     const details = jwt.verify(token, JWT_SECRET);
     setDetails(details);
     setLoginStatus(true);
@@ -34,7 +34,7 @@ function App() {
         <Route path="/register" exact>
           <Register />
         </Route>
-        <Route path="/forgotP" exact>
+        <Route path="/forgotP">
           <ForgotPage />
         </Route>
         <Route path="/resetP" exact>

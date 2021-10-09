@@ -1,0 +1,38 @@
+#reset__page {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background: rgb(26, 25, 25);
+}
+
+.reset__page-wrapper {
+  background: #000;
+  min-height: 50vh;
+  width: fit-content;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0.7rem;
+  max-width: 100vw;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.reset__page-input {
+  background-color: transparent !important;
+  border: 1px solid #0d6efd !important;
+  font-size: 2rem !important;
+  color: aliceblue !important;
+  height: 5rem;
+  min-width: 50rem !important;
+  max-width: 70vw !important;
+}
+
+.reset__page-wrapper h3,
+.reset__page-wrapper p {
+  color: aliceblue;
+  align-self: flex-start;
+}

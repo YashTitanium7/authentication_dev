@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import LoginImage from "../img/login.svg.js";
 import { toast } from "react-toastify";
@@ -95,7 +95,7 @@ const Register = () => {
             <Button
               variant="primary"
               type="submit"
-              className="login__page-form-submiBtn"
+              className="form-submitBtn"
             >
               Submit
             </Button>

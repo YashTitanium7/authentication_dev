@@ -1,7 +1,7 @@
-const config = require('./config.json')
+require('dotenv').config()
 const express = require('express'),
   app = express(),
-  PORT = process.env.SERVER_PORT || config.SERVER_PORT,
+  PORT = process.env.SERVER_PORT || 8000,
   cors = require('cors')
   
 app.get('/', (req, res) => {

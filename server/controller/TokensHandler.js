@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = process.env.JWT_SECRET || require("../../../config.json").JWT_SECRET
+const JWT_SECRET = process.env.JWT_SECRET
 
 exports.genToken = (user) => {
   const { name, email } = user;

@@ -1,11 +1,10 @@
 {
   "errors": {
-    "R_AFSP": "All fields should be filled.",
-    "L_AFSP": "All fields should be filled.",
-    "R_EAEX": "E-mail alread exists.",
-    "L_EDEX": "E-mail doesn't exists, please register",
-    "R_PDMA": "Passwords doesn't match.",
-    "L_ICD": "Incorrect Credentials"
+    "AFSF": "All fields should be filled.",
+    "EAE": "E-mail alread exists.",
+    "EDE": "E-mail doesn't exists, please register",
+    "PDM": "Passwords doesn't match.",
+    "IC": "Incorrect Credentials"
   },
   "messages": {
     "R_RS": "Registration successfull",
