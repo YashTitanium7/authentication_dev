@@ -7,8 +7,7 @@ const ForgotPage = () => {
 
   const sendData = async(e) => {
     e.preventDefault()
-    const domain = process.env.REACT_APP_DOMAIN_ADDR || "http://localhost:5000"
-    const response = await fetch(`${domain}/api/forgotPassword`, {
+    const response = await fetch(`/api/forgotPassword`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

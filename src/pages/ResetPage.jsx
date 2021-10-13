@@ -40,8 +40,7 @@ const ResetPage = () => {
   const sendData = async(e) => {
     setLoading(true)
     e.preventDefault()
-    const domain = process.env.REACT_APP_DOMAIN_ADDR || "http://localhost:5000"
-    const response = await fetch(`${domain}/api/resetPassword`, {
+    const response = await fetch(`/api/resetPassword`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
