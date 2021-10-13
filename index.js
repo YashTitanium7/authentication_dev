@@ -6,11 +6,13 @@ const express = require('express'),
   
 require('./server/database/connection')
 
-const path = require('path')
-app.use(express.static(path.resolve(__dirname, "build")))
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, "build", "index.html"))
-})
+if (process.env.NODE_ENV === "production") {
+  const path = require('path')
+  app.use(express.static(path.resolve(__dirname, "build")))
+  app.get('/*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, "build", "index.html"))
+  })
+}
 
 app.use(cors())
 app.use(express.json())
