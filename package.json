@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "vercel-build": "yarn install && yarn build"
   },
   "eslintConfig": {
     "extends": [
