@@ -1,9 +1,9 @@
 const User = require("../database/models/userSchema"),
-  bcrypt = require("bcryptjs"),
   jwt = require("jsonwebtoken"),
   tokenHandler = require("./TokensHandler"),
   JWT_SECRET = process.env.JWT_SECRET,
-  mailer = require("../controller/mailer");
+  mailer = require("../controller/mailer"),
+  hasher = require('./hasher')
 
 // @desc Registration Route
 exports.register = async (req, res) => {
@@ -16,7 +16,8 @@ exports.register = async (req, res) => {
       return res.status(400).json({ success: false, error: "EAE" });
     if (password !== cpassword)
       return res.status(400).json({ success: false, error: "PDM" });
-    const user = new User({ name, email, password }),
+    const hashedPassword = await hasher.hash(password)
+    const user = new User({ name, email, password: hashedPassword }),
       userRegister = await user.save();
     res.status(201).json({ success: true, message: "R_RS" });
   } catch (error) {
@@ -32,7 +33,7 @@ exports.login = async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user) return res.status(400).json({ success: false, error: "EDE" });
-    const passVerified = await bcrypt.compare(password, user.password);
+    const passVerified = await hasher.check(password, user.password);
     if (!passVerified)
       return res.status(400).json({ success: false, error: "IC" });
     const token = tokenHandler.genToken(user);
@@ -54,9 +55,10 @@ exports.forgotPassword = async (req, res) => {
     const payload = {
       email: userInDatabase.email,
       id: userInDatabase._id,
+      pstring: userInDatabase.password
     };
     const token = jwt.sign(payload, secret);
-    const host = process.env.HOST_ADDR || "http://localhost:5000";
+    const host = process.env.HOST_ADDR || "http://localhost:3000";
     const url = `${host}/resetP/${token}`;
     mailer.sendMail({
       to: email,
@@ -70,13 +72,27 @@ exports.forgotPassword = async (req, res) => {
   }
 };
 
-exports.resetPassword = (req, res) => {
-  const { password, cpassword } = req.body
-  if(!password || !cpassword) return res.status(400).json({ success: false, error: "AFSF" })
-  if(password === cpassword) return res.status(400).json({ success: false, error: "PDM" })
+const updatePassword = async(_id, password) => {
   try {
-    
+    const result = await User.updateOne({ _id }, { $set: { password } })
   } catch (error) {
-    
+    console.log(error.message)
   }
 }
+
+exports.resetPassword = async(req, res) => {
+  const { password, cpassword, id } = req.body;
+  if (!id) return res.status(400).json({ success: false, error: "SWW" });
+  if (!password || !cpassword)
+    return res.status(400).json({ success: false, error: "AFSF" });
+  if (password !== cpassword)
+    return res.status(400).json({ success: false, error: "PDM" });
+  try {
+    const hashedPassword = await hasher.hash(password)
+    updatePassword(id, hashedPassword)
+    res.status(200).json({ success: true, message: "PRS" })
+  } catch (error) {
+    console.log(error.message)
+    res.status(400).json({ success: false, error: error.message });
+  }
+};

@@ -37,7 +37,7 @@ function App() {
         <Route path="/forgotP">
           <ForgotPage />
         </Route>
-        <Route path="/resetP" exact>
+        <Route path="/resetP/:token">
           <ResetPage />
         </Route>
       </Router>

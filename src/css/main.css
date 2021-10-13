@@ -105,6 +105,9 @@ form {
 
 .form-submitBtn {
   font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.4s ease-in-out;
 }
 
 #register__page {
@@ -163,4 +166,8 @@ form {
 
 .form-link {
   font-size: 1.5rem;
+}
+
+.css-1g7o1ih {
+  margin-left: 2rem;
 }

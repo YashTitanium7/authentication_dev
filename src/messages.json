@@ -4,10 +4,13 @@
     "EAE": "E-mail alread exists.",
     "EDE": "E-mail doesn't exists, please register",
     "PDM": "Passwords doesn't match.",
-    "IC": "Incorrect Credentials"
+    "IC": "Incorrect Credentials",
+    "SWW": "Sorry for the inconvenience Something Went wrong."
   },
   "messages": {
     "R_RS": "Registration successfull",
-    "L_LS": "Login successfull"
+    "L_LS": "Login successfull",
+    "PRS": "Password reset successfull",
+    "FP_EMSS": "Link successfully sent."
   }
 }

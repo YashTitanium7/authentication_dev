@@ -4,11 +4,13 @@ const express = require('express'),
   PORT = process.env.SERVER_PORT || 8000,
   cors = require('cors')
   
-app.get('/', (req, res) => {
-  res.send(`🚀 Up and Running`)
-})
-
 require('./server/database/connection')
+
+const path = require('path')
+app.use(express.static(path.resolve(__dirname, "build")))
+app.get('/*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, "build", "index.html"))
+})
 
 app.use(cors())
 app.use(express.json())

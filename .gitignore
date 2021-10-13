@@ -1,4 +1,5 @@
 node_modules
+build
 testing.*
 *.env
 *.code_workspace
