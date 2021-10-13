@@ -6,7 +6,7 @@ const express = require('express'),
   
 require('./server/database/connection')
 
-if (process.env.NODE_ENV === "production") {
+if (process.env.VERCEL_ENV === "production") {
   const path = require('path')
   app.use(express.static(path.resolve(__dirname, "build")))
   app.get('/*', (req, res) => {
